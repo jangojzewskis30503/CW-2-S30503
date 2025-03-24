@@ -5,6 +5,7 @@
     <RootNamespace>APBD_CW2</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	<OutputType>Exe</OutputType>
   </PropertyGroup>
 
 </Project>

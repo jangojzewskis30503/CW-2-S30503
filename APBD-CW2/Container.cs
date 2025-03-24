@@ -8,36 +8,46 @@ namespace APBD_CW2
 {
     public abstract class Container
     {
-        private double wagaLadunku  { get; set; }
-        private double wagaKontenera    { get; set; }
-        private double wagaMaksymalna { get; set; }
-        private double wysokosc {  get; set; }
-        private double glebokosc {  get; set; }
-        private string nr_seryjny { get; set; }
-       
-        private int nr_seryjny_licznik = 1;
-       
-        
-        public Container(string typ, double wagaKontenera)
+        public double WagaLadunku {  get;  set; }
+        public double WagaKontenera { get;  set; }
+        protected double WagaMaksymalna { get; set; }
+        protected double Wysokosc { get;  set; }
+        protected double Glebokosc { get;  set; }
+        public string NrSeryjny { get;  set; }
+        private static int nrSeryjnyLicznik = 1;
+
+        public Container(string typ, double wagaMaksymalna, double wagaKontenera, double wysokosc, double glebokosc)
         {
-            nr_seryjny = $"KON-{typ}-{nr_seryjny_licznik++}";
+            NrSeryjny = $"KON-{typ}-{nrSeryjnyLicznik++}";
+            WagaMaksymalna = wagaMaksymalna;
+            WagaKontenera = wagaKontenera;
+            Wysokosc = wysokosc;
+            Glebokosc = glebokosc;
+            WagaLadunku = 0;
+        }
 
-            wagaMaksymalna = wagaMaksymalna;
-           }
-
+       
 
         public virtual void ZaladujLadunek(double waga)
         {
-            if (waga + wagaKontenera > wagaMaksymalna)
+            if (WagaLadunku + waga > WagaMaksymalna)
             {
-                throw new OverFillException($"Przepełnienie kontenera{nr_seryjny}!");
+                throw new OverFillException($"Przepełnienie kontenera: {NrSeryjny}!");
             }
-            wagaLadunku += waga;
 
+            WagaLadunku += waga;
         }
 
+        public virtual void WyladujLadunek()
+        {
+            WagaLadunku = 0;
+        }
 
-
-
+        public override string ToString()
+        {
+            return $"{NrSeryjny}: {WagaLadunku}/{WagaMaksymalna} kg";
+        }
     }
 }
+    
+

@@ -8,6 +8,6 @@ namespace APBD_CW2
 {
     interface IHazardNotifier
     {
-        void NotifyHazard(string serialNumber);
+        void NotifyHazard(string nrSeryjny);
     }
 }
