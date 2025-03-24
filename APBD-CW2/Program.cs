@@ -11,7 +11,7 @@
                 Ship ship = new Ship("Posejdon", 30, 5, 10000);
 
                 // Tworzenie różnych typów kontenerów
-                GasContainer gasContainer = new GasContainer(5000, 1000, 200, 150, 10);
+                GasContainer gasContainer = new GasContainer(5000, 1000, 200, 15, 10);
                 LiquidContainer liquidContainer = new LiquidContainer(4000, 800, 180, 140, true);
                 RefrigeratedContainer refrigeratedContainer = new RefrigeratedContainer(3000, 700, 160, 130, "Meat", -15);
 

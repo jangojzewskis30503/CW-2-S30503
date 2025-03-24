@@ -8,12 +8,12 @@ namespace APBD_CW2
 {
     public abstract class Container
     {
-        public double WagaLadunku {  get;  set; }
-        public double WagaKontenera { get;  set; }
-        protected double WagaMaksymalna { get; set; }
-        protected double Wysokosc { get;  set; }
-        protected double Glebokosc { get;  set; }
-        public string NrSeryjny { get;  set; }
+        public double WagaLadunku {  get; private set; }
+        public double WagaKontenera { get; private set; }
+        public double WagaMaksymalna { get; private set; }
+        public double Wysokosc { get;  private set; }
+        public double Glebokosc { get;  private set; }
+        public string NrSeryjny { get; private set; }
         private static int nrSeryjnyLicznik = 1;
 
         public Container(string typ, double wagaMaksymalna, double wagaKontenera, double wysokosc, double glebokosc)

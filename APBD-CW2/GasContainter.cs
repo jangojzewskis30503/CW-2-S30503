@@ -24,8 +24,8 @@ namespace APBD_CW2
         public override void WyladujLadunek()
         {
             double pozostałyLadunek = WagaLadunku * 0.05; 
-            WagaLadunku = pozostałyLadunek;  
-            Console.WriteLine($"Kontener {NrSeryjny} oprożniony, ale pozostawiono 5% ładunku: {WagaLadunku} kg");
+              
+            Console.WriteLine($"Kontener {NrSeryjny} oprożniony, ale pozostawiono 5% ładunku: {pozostałyLadunek} kg");
         }
 
         public void NotifyHazard(string nrSeryjny)

@@ -8,8 +8,8 @@ namespace APBD_CW2
 {
     public class RefrigeratedContainer : Container, IHazardNotifier
     {
-        protected double Temperatura { get;  set; }
-        protected string Produkt { get; set; }
+        public double Temperatura { get; private set; }
+        public string Produkt { get; private set; }
 
         private static Dictionary<string, double> MinimalneTemperatury = new Dictionary<string, double>()
         {
